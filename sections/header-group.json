@@ -21,7 +21,7 @@
             "text": "New Collection Now LIVE!",
             "link": "shopify://pages/holiday-2025-shipping-information",
             "font": "var(--font-body--family)",
-            "font_size": "1rem",
+            "font_size": "0.875rem",
             "weight": "",
             "letter_spacing": "normal",
             "case": "uppercase"
