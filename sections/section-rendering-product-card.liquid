@@ -67,7 +67,7 @@
     -%}
     {% if has_swatches_block %}
       {% if has_combined_listing and enable_combined %}
-        {% render 'variant-combined-listing-swatches', product_resource: product, block: blank %}
+        {% render 'variant-combined-listing-swatches', product_resource: product, block: blank, section: section %}
       {% else %}
         {% render 'variant-swatches', product_resource: product, has_option_selected: true %}
       {% endif %}
