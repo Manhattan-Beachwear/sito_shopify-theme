@@ -19,7 +19,7 @@
           "name": "t:names.announcement",
           "settings": {
             "text": "New Collection Now LIVE!",
-            "link": "shopify://pages/holiday-2025-shipping-information",
+            "link": "shopify://collections/2026-collection",
             "font": "var(--font-body--family)",
             "font_size": "0.875rem",
             "weight": "",
