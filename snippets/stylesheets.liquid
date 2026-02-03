@@ -1,2 +1,14 @@
 {{ 'overflow-list.css' | asset_url | preload_tag: as: 'style' }}
 {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+
+{%- if template == 'page.contact' -%}
+  {{ 'page-contact.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- if template == 'page.faq' -%}
+  {{ 'page-faq.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- if template == 'page.store-locator' -%}
+  {{ 'page-store-locator.css' | asset_url | stylesheet_tag }}
+{%- endif -%}

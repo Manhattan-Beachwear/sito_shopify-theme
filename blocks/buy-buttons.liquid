@@ -141,6 +141,7 @@
             can_add_to_cart: can_add_to_cart,
             form_obj: form
           %}
+
         </div>
       {%- endform -%}
     </product-form-component>
@@ -564,6 +565,20 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "quantity"
+    },
+    {
+      "type": "add-to-cart"
+    },
+    {
+      "type": "accelerated-checkout"
     }
   ],
   "presets": [
