@@ -7,24 +7,10 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "type": "footer",
   "name": "t:names.footer",
   "sections": {
-    "divider_zdYqKY": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "section_width": "full-width",
-        "thickness": 1.5,
-        "corner_radius": "square",
-        "width_percent": 100,
-        "alignment_horizontal": "center",
-        "padding-block-start": 16,
-        "padding-block-end": 16
-      }
-    },
     "section_qPXKLw": {
       "type": "section",
       "blocks": {
@@ -260,7 +246,6 @@
     }
   },
   "order": [
-    "divider_zdYqKY",
     "section_qPXKLw",
     "footer",
     "utilities"
