@@ -273,8 +273,19 @@ const normalizedValue = value.trim().toLowerCase();
 4. Unit tests for JavaScript components
 5. Documentation for theme developers on how to extend the component
 
+## Quick Add and Combined Listings
+
+When **Enable Combined Listings** is on for a section (e.g. featured collection), the quick-add snippet (`snippets/quick-add.liquid`) treats combined listing linked products as "variants":
+
+- **Variant to use**: Uses `first_variant` from `util-combined-listing-data` (first sorted swatch) when the product has a combined listing; otherwise uses standard swatch/selected logic.
+- **Add vs Choose button**: Uses an "effective" single vs multi variant:
+  - **Single**: One variant, one option, or combined listing with only one linked product → show **Add to cart**.
+  - **Multi**: Multiple variants/options, or combined listing with 2+ linked products → show **Choose** (opens quick-add modal so the user can pick color/variant in the modal).
+- The snippet must receive `section` (e.g. from `blocks/_product-card-gallery.liquid`) so it can read `section.settings.enable_combined_listings`. The quick-add modal (in `layout/theme.liquid`) and `assets/quick-add.js` already support combined listing variant pickers inside the modal.
+
 ## Related Files
 
+- `snippets/quick-add.liquid` - Quick add on product cards; respects combined listing for Add vs Choose and initial variant
 - `snippets/variant-main-picker.liquid` - Legacy variant picker (reference for styling)
 - `snippets/strikethrough-variant.liquid` - Sold-out variant strikethrough SVG
 - `snippets/swatch.liquid` - Swatch rendering snippet

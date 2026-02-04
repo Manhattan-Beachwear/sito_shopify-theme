@@ -3,5 +3,5 @@ store = "sito-shades-usa.myshopify.com"
 ignore = ""
 
 [environments.dev]
-store = "leisure-collective-dev-store"
+store = "leisure-collective-2.myshopify.com"
 ignore = ""

@@ -18,22 +18,17 @@
   @media (min-width: 750px) {
     {% case section.settings.layout_type %}
       {% when 'grid' %}
+        {% comment %} Card size controls min column width: small = more columns, large = fewer {% endcomment %}
         .product-grid--{{ section.id }}:is(.product-grid--grid) {
-          --product-grid-columns-desktop: repeat(4, 1fr);
+          --product-grid-columns-desktop: repeat(auto-fill, minmax({{ product_card_size }}, 1fr));
         }
 
-        @container product-grid (max-width: 1200px) {
-          .product-grid--{{ section.id }}:is(.product-grid--grid) {
-            --product-grid-columns-desktop: repeat(3, 1fr);
-          }
-        }
-
-        @container product-grid (max-width: 900px) {
+        {% comment %} Ensure at least 2 columns when container is narrow (large/extra-large already handled below) {% endcomment %}
+        @container product-grid (max-width: calc({{ product_card_size }} * 2 + {{ section.settings.columns_gap_horizontal }}px)) {
           .product-grid--{{ section.id }}:is(.product-grid--grid) {
             --product-grid-columns-desktop: repeat(2, 1fr);
           }
         }
-
 
       {% when 'organic' %}
         {% assign large_span = 2 %}
