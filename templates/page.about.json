@@ -64,7 +64,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>New arrivals</h2>",
+            "text": "<h1>Where it all began</h1>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -113,7 +113,7 @@
         "section_width": "page-width",
         "section_height": "large",
         "section_height_custom": 50,
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-31bd1853-9f1e-443a-9bde-57f3b4ffc1ef",
         "toggle_overlay": true,
         "overlay_color": "#00000026",
         "overlay_style": "gradient",
