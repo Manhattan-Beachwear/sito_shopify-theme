@@ -410,7 +410,7 @@
                 "product_swatches_padding_left": 0,
                 "product_swatches_padding_right": 0,
                 "show_product_image_swatches": true,
-                "product_image_swatch_style": "circle",
+                "product_image_swatch_style": "square",
                 "product_image_swatch_size": 48,
                 "show_horizontal_scroll": false
               },
@@ -420,7 +420,7 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "square",
+                "image_ratio": "adapt",
                 "media_fit": "cover",
                 "border": "none",
                 "border_width": 1,
