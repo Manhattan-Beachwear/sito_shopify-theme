@@ -87,12 +87,13 @@
         "video_position": "cover",
         "background_image": "{{ collection.image }}",
         "background_image_position": "cover",
+        "image_zoom_fade_animation": false,
         "border": "none",
         "border_width": 1,
         "border_opacity": 100,
         "border_radius": 0,
         "toggle_overlay": true,
-        "overlay_color": "#00000090",
+        "overlay_color": "#0000008f",
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 48,
@@ -106,6 +107,7 @@
           "type": "filters",
           "static": true,
           "settings": {
+            "use_simple_controls": true,
             "enable_filtering": true,
             "filter_style": "horizontal",
             "filter_width": "centered",
@@ -146,6 +148,7 @@
               "type": "_product-card-gallery",
               "settings": {
                 "image_ratio": "adapt",
+                "media_fit": "cover",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -214,7 +217,11 @@
                 "product_swatches_padding_top": 4,
                 "product_swatches_padding_bottom": 0,
                 "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
+                "product_swatches_padding_right": 0,
+                "show_product_image_swatches": true,
+                "product_image_swatch_style": "square",
+                "product_image_swatch_size": 48,
+                "show_horizontal_scroll": false
               },
               "blocks": {}
             }
@@ -241,7 +248,12 @@
         "padding-inline-end": 0,
         "color_scheme": "scheme-1",
         "padding-block-start": 0,
-        "padding-block-end": 32
+        "padding-block-end": 32,
+        "enable_combined_listings": false,
+        "show_product_image_swatches": false,
+        "product_image_swatch_style": "circle",
+        "product_image_swatch_size": 48,
+        "show_horizontal_scroll": false
       }
     }
   },
