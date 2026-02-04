@@ -9,6 +9,12 @@ export class QuickAddComponent extends Component {
   #abortController = null;
   /** @type {Map<string, Element>} */
   #cachedContent = new Map();
+  /** @type {Map<string, Element>} */
+  #cachedContentCL = new Map();
+  /** @type {string} */
+  #clModalCurrentUrl = '';
+  /** @type {boolean} */
+  #clModalLoadInProgress = false;
 
   get productPageUrl() {
     const productCard = /** @type {import('./product-card').ProductCard | null} */ (this.closest('product-card'));
@@ -46,6 +52,7 @@ export class QuickAddComponent extends Component {
    */
   clearCache() {
     this.#cachedContent.clear();
+    this.#cachedContentCL.clear();
   }
 
   connectedCallback() {
@@ -69,9 +76,11 @@ export class QuickAddComponent extends Component {
     event.preventDefault();
 
     const currentUrl = this.productPageUrl;
+    const isCl = this.dataset.combinedListing === 'true';
+    const cache = isCl ? this.#cachedContentCL : this.#cachedContent;
 
     // Check if we have cached content for this URL
-    let productGrid = this.#cachedContent.get(currentUrl);
+    let productGrid = cache.get(currentUrl);
 
     if (!productGrid) {
       // Fetch and cache the content
@@ -81,7 +90,7 @@ export class QuickAddComponent extends Component {
         if (gridElement) {
           // Cache the cloned element to avoid modifying the original
           productGrid = /** @type {Element} */ (gridElement.cloneNode(true));
-          this.#cachedContent.set(currentUrl, productGrid);
+          cache.set(currentUrl, productGrid);
         }
       }
     }
@@ -89,27 +98,31 @@ export class QuickAddComponent extends Component {
     if (productGrid) {
       // Use a fresh clone from the cache
       const freshContent = /** @type {Element} */ (productGrid.cloneNode(true));
-      await this.updateQuickAddModal(freshContent);
+      await this.updateQuickAddModal(freshContent, { useClModal: isCl });
     }
 
     // CRITICAL: After updating the modal, ensure the variant ID input is set correctly
-    // The fetched HTML might have the default variant, so we need to override it
-    const modalContent = document.getElementById('quick-add-modal-content');
+    const modalContentId = isCl ? 'quick-add-modal-content-cl' : 'quick-add-modal-content';
+    const modalContent = document.getElementById(modalContentId);
     if (modalContent) {
-      // Get variant ID from URL (most reliable)
       const url = new URL(currentUrl);
       const variantIdFromUrl = url.searchParams.get('variant');
-      
       if (variantIdFromUrl) {
-        // Update the hidden variant ID input in the form
         const variantIdInput = modalContent.querySelector('input[name="id"][ref="variantId"]');
         if (variantIdInput instanceof HTMLInputElement) {
           variantIdInput.value = variantIdFromUrl;
         }
       }
+      if (isCl) {
+        this.#clModalCurrentUrl = url.pathname;
+      }
     }
 
-    this.#openQuickAddModal();
+    if (isCl) {
+      this.#openQuickAddModalCL();
+    } else {
+      this.#openQuickAddModal();
+    }
   };
 
   /** @param {QuickAddDialog} dialogComponent */
@@ -130,11 +143,20 @@ export class QuickAddComponent extends Component {
     dialogComponent.showDialog();
   };
 
-  #closeQuickAddModal = () => {
-    const dialogComponent = document.getElementById('quick-add-dialog');
+  #openQuickAddModalCL = () => {
+    const dialogComponent = document.getElementById('quick-add-dialog-cl');
     if (!(dialogComponent instanceof QuickAddDialog)) return;
 
-    dialogComponent.closeDialog();
+    this.#stayVisibleUntilDialogCloses(dialogComponent);
+
+    dialogComponent.showDialog();
+  };
+
+  #closeQuickAddModal = () => {
+    const standardDialog = document.getElementById('quick-add-dialog');
+    const clDialog = document.getElementById('quick-add-dialog-cl');
+    if (standardDialog instanceof QuickAddDialog) standardDialog.closeDialog();
+    if (clDialog instanceof QuickAddDialog) clDialog.closeDialog();
   };
 
   /**
@@ -186,9 +208,12 @@ export class QuickAddComponent extends Component {
   /**
    * Re-renders the variant picker.
    * @param {Element} productGrid - The product grid element
+   * @param {{ useClModal?: boolean }} [options] - When useClModal is true, target the combined listing modal
    */
-  async updateQuickAddModal(productGrid) {
-    const modalContent = document.getElementById('quick-add-modal-content');
+  async updateQuickAddModal(productGrid, options = {}) {
+    const useClModal = options.useClModal === true;
+    const modalContentId = useClModal ? 'quick-add-modal-content-cl' : 'quick-add-modal-content';
+    const modalContent = document.getElementById(modalContentId);
 
     if (!productGrid || !modalContent) return;
 
@@ -345,18 +370,20 @@ export class QuickAddComponent extends Component {
         // Check if swatches are actually rendered
         if (swatchList && swatchListItems.length > 0) {
           const firstItem = swatchListItems[0];
-          const firstItemDisplay = window.getComputedStyle(firstItem).display;
-          const firstItemVisibility = window.getComputedStyle(firstItem).visibility;
-          const firstDetails = {
-            tagName: firstItem.tagName,
-            className: firstItem.className,
-            display: firstItemDisplay,
-            visibility: firstItemVisibility,
-            innerHTMLLength: firstItem.innerHTML.length,
-            hasSwatch: !!firstItem.querySelector('.swatch, .variant-option__swatch'),
-            htmlPreview: firstItem.outerHTML.substring(0, 300)
-          };
-          console.warn('🔍 [DEBUG] First Swatch Item Details:', firstDetails);
+          if (firstItem) {
+            const firstItemDisplay = window.getComputedStyle(firstItem).display;
+            const firstItemVisibility = window.getComputedStyle(firstItem).visibility;
+            const firstDetails = {
+              tagName: firstItem.tagName,
+              className: firstItem.className,
+              display: firstItemDisplay,
+              visibility: firstItemVisibility,
+              innerHTMLLength: firstItem.innerHTML.length,
+              hasSwatch: !!firstItem.querySelector('.swatch, .variant-option__swatch'),
+              htmlPreview: firstItem.outerHTML.substring(0, 300)
+            };
+            console.warn('🔍 [DEBUG] First Swatch Item Details:', firstDetails);
+          }
         } else {
           console.warn('🔍 [DEBUG] Swatch list is empty or not found. swatchList=', !!swatchList, 'swatchListItems=', swatchListItems.length);
           if (swatchesFieldset) {
@@ -428,6 +455,13 @@ export class QuickAddComponent extends Component {
     // Set up listener for variant changes in combined listing pickers within the modal
     // This ensures the form's variant ID input stays in sync when users change variants
     this.#setupCombinedListingVariantListener(modalContent);
+
+    // When modal content has a combined listing picker (standard or CL modal), load the selected product on swatch change
+    // so image, title, and price update; works regardless of which modal was opened (section may not set data-combined-listing)
+    const hasClPicker = modalContent.querySelector('variant-picker-cl, variant-picker-cl-dual') !== null;
+    if (hasClPicker) {
+      this.#setupCombinedListingSwatchLoadProduct(modalContent);
+    }
   }
 
   /**
@@ -468,6 +502,86 @@ export class QuickAddComponent extends Component {
           this.#updateVariantIdInput(modalContent, finalVariantId);
         }
       });
+    }
+  }
+
+  /**
+   * Sets up listener so that when a swatch is selected in the CL modal, we fetch that product's
+   * page (with the selected variant) and load it into the modal so image, title, and price update.
+   * @param {Element} modalContent - The CL modal content element (#quick-add-modal-content-cl)
+   */
+  #setupCombinedListingSwatchLoadProduct(modalContent) {
+    const pickers = modalContent.querySelectorAll('variant-picker-cl, variant-picker-cl-dual');
+    for (const picker of pickers) {
+      picker.addEventListener('change', async (event) => {
+        if (!(event.target instanceof HTMLInputElement) || event.target.type !== 'radio') return;
+        const connectedProductUrl = event.target.dataset.connectedProductUrl;
+        const variantId = event.target.dataset.variantId || event.target.value;
+        if (!connectedProductUrl || !variantId) return;
+
+        try {
+          const url = new URL(connectedProductUrl, window.location.origin);
+          url.searchParams.set('variant', variantId);
+          const productUrl = url.toString();
+          await this.#loadProductIntoClModal(productUrl, modalContent, variantId);
+        } catch (e) {
+          // If URL parsing fails, skip load
+        }
+      });
+    }
+  }
+
+  /**
+   * Fetches a product page and morphs its content into the CL modal; updates variant ID and re-attaches listeners.
+   * @param {string} productUrl - Full product URL (with variant param)
+   * @param {Element} modalContent - The CL modal content element
+   * @param {string} variantId - The variant ID to set in the form
+   */
+  async #loadProductIntoClModal(productUrl, modalContent, variantId) {
+    if (this.#clModalLoadInProgress) return;
+    this.#clModalLoadInProgress = true;
+    try {
+      let productGrid = this.#cachedContentCL.get(productUrl);
+      if (!productGrid) {
+        const html = await this.fetchProductPage(productUrl);
+        const gridElement = html?.querySelector('[data-product-grid-content]');
+        if (html && gridElement) {
+          productGrid = /** @type {Element} */ (gridElement.cloneNode(true));
+          this.#cachedContentCL.set(productUrl, productGrid);
+        }
+      }
+      if (!productGrid) return;
+
+      const freshContent = /** @type {Element} */ (productGrid.cloneNode(true));
+      if (isMobileBreakpoint()) {
+        const productDetails = freshContent.querySelector('.product-details');
+        const productFormComponent = freshContent.querySelector('product-form-component');
+        const variantPicker = freshContent.querySelector('variant-picker, variant-picker-cl, variant-picker-cl-dual');
+        const productPrice = freshContent.querySelector('product-price');
+        const productTitle = document.createElement('a');
+        productTitle.textContent = this.dataset.productTitle || '';
+        productTitle.href = productUrl;
+        const productHeader = document.createElement('div');
+        productHeader.classList.add('product-header');
+        productHeader.appendChild(productTitle);
+        if (productPrice) productHeader.appendChild(productPrice);
+        freshContent.appendChild(productHeader);
+        if (variantPicker) freshContent.appendChild(variantPicker);
+        if (productFormComponent) freshContent.appendChild(productFormComponent);
+        productDetails?.remove();
+      }
+
+      morph(modalContent, freshContent);
+      try {
+        this.#clModalCurrentUrl = new URL(productUrl, window.location.origin).pathname;
+      } catch (e) {
+        this.#clModalCurrentUrl = '';
+      }
+      this.#updateVariantIdInput(modalContent, variantId);
+      this.#setupCombinedListingVariantListener(modalContent);
+      this.#setupCombinedListingSwatchLoadProduct(modalContent);
+    } finally {
+      this.#clModalLoadInProgress = false;
     }
   }
 

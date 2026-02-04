@@ -99,6 +99,7 @@
   class="quick-add color-{{ settings.quick_add_color_scheme }} "
   ref="quickAdd"
   data-product-title="{{ product.title }}"
+  {% if has_combined_listing and enable_combined and combined_listing_product_count > 1 %}data-combined-listing="true"{% endif %}
 >
   <product-form-component
     data-section-id="{{ section_id }}"

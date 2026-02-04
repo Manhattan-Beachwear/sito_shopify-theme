@@ -66,6 +66,7 @@
 
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
+      {% render 'quick-add-modal-cl' %}
     {% endif %}
 
     {%- render 'store-custom-body' -%}
