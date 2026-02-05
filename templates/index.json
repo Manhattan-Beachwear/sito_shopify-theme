@@ -398,24 +398,6 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "swatches_QmTPXT": {
-              "type": "swatches",
-              "name": "t:names.swatches",
-              "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": false,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0,
-                "show_product_image_swatches": true,
-                "product_image_swatch_style": "square",
-                "product_image_swatch_size": 48,
-                "show_horizontal_scroll": false
-              },
-              "blocks": {}
-            },
             "product_card_gallery_dbg8F6": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
@@ -480,13 +462,31 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "swatches_QmTPXT": {
+              "type": "swatches",
+              "name": "t:names.swatches",
+              "settings": {
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
+                "product_swatches_padding_top": 4,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0,
+                "show_product_image_swatches": true,
+                "product_image_swatch_style": "square",
+                "product_image_swatch_size": 48,
+                "show_horizontal_scroll": false
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "swatches_QmTPXT",
             "product_card_gallery_dbg8F6",
             "product_title_FTrAjz",
-            "price_cP4i6D"
+            "price_cP4i6D",
+            "swatches_QmTPXT"
           ]
         }
       },
@@ -863,6 +863,73 @@
         "padding-block-start": 100,
         "padding-block-end": 100
       }
+    },
+    "marquee_7df8gE": {
+      "type": "marquee",
+      "blocks": {
+        "icon_awG3fJ": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/Pedestrian_Logo.webp",
+            "width": 140,
+            "link": "",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "icon_Hgk8nh": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/Fashion_Journal_Logo.webp",
+            "width": 140,
+            "link": "",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "icon_YWt8ef": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/ELLE_Magazine_Logo.webp",
+            "width": 140,
+            "link": "",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "icon_zWiLXx": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/Facon_Magazine_Logo.webp",
+            "width": 140,
+            "link": "",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "icon_awG3fJ",
+        "icon_Hgk8nh",
+        "icon_YWt8ef",
+        "icon_zWiLXx"
+      ],
+      "name": "t:names.marquee_section",
+      "settings": {
+        "movement_direction": "normal",
+        "color_scheme": "",
+        "padding-block-start": 24,
+        "padding-block-end": 24,
+        "gap_between_elements": 24
+      }
     }
   },
   "order": [
@@ -871,6 +938,7 @@
     "product_list_eCMtLt",
     "collection_list_PtLKny",
     "product_list_aYC6Tr",
-    "177014541190c46887"
+    "177014541190c46887",
+    "marquee_7df8gE"
   ]
 }
