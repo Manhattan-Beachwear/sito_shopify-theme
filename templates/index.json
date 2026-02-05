@@ -647,7 +647,7 @@
                 "alignment": "left",
                 "type_preset": "custom",
                 "font": "var(--font-heading--family)",
-                "font_size": "0.875rem",
+                "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "uppercase",
@@ -693,10 +693,10 @@
       "name": "t:names.collections_carousel",
       "settings": {
         "collection_list": [
+          "best-sellers",
           "2026-collection",
-          "mens",
           "womens",
-          "best-sellers"
+          "mens"
         ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -842,8 +842,8 @@
                   "type": "text",
                   "settings": {
                     "text": "<p>Wear your ticket to roam with Atlas by<em>Sito Shades</em>. This lightweight aviator frame pairs bold confidence with effortless cool, perfect for sunrises, city streets, or spontaneous road trips. Crafted from durable eco acetate and fitted with premium UV lenses, Atlas keeps your eyes protected while moving seamlessly from adventure to everyday. Designed in Australia, it’s freedom with a refined edge — no itinerary required.<br/><br/></p>",
-                    "width": "fit-content",
-                    "max_width": "narrow",
+                    "width": "100%",
+                    "max_width": "none",
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
