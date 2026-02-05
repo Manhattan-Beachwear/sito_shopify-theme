@@ -335,7 +335,7 @@
       "name": "t:names.products_grid",
       "settings": {
         "collection": "collection-grid-homepage",
-        "layout_type": "grid",
+        "layout_type": "carousel",
         "carousel_on_mobile": true,
         "max_products": 6,
         "columns": 3,
