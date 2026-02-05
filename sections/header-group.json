@@ -121,7 +121,7 @@
       "settings": {
         "logo_position": "left",
         "menu_layout": "standard",
-        "menu_position": "left",
+        "menu_position": "right",
         "menu_row": "top",
         "menu_row_center": false,
         "show_search": true,
