@@ -218,7 +218,7 @@
                           "name": "t:names.icon",
                           "settings": {
                             "icon": "truck",
-                            "width": 30,
+                            "width": 20,
                             "link": "",
                             "open_in_new_tab": false
                           },
