@@ -65,7 +65,7 @@
             "menu": "main-menu",
             "split_after_item": 1,
             "color_scheme": "",
-            "type_font_primary_size": "0.875rem",
+            "type_font_primary_size": "0.75rem",
             "menu_font_style": "regular",
             "type_font_primary_link": "subheading",
             "type_case_primary_link": "uppercase",
