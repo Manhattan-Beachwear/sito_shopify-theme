@@ -812,9 +812,144 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "product_card_DWXcC3": {
+                  "type": "product-card",
+                  "name": "t:names.product_card",
+                  "settings": {
+                    "product": "atlas",
+                    "product_card_gap": 4,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "product_title_Ph7kbp": {
+                      "type": "product-title",
+                      "name": "t:names.product_title",
+                      "settings": {
+                        "width": "fit-content",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "h3",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 4,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "text_nQxzAU": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Wear your ticket to roam with Atlas by<em>Sito Shades</em>. This lightweight aviator frame pairs bold confidence with effortless cool, perfect for sunrises, city streets, or spontaneous road trips. Crafted from durable eco acetate and fitted with premium UV lenses, Atlas keeps your eyes protected while moving seamlessly from adventure to everyday. Designed in Australia, it’s freedom with a refined edge — no itinerary required.<br/><br/></p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "product_card_gallery_6Yijzk": {
+                      "type": "_product-card-gallery",
+                      "settings": {
+                        "image_ratio": "square",
+                        "media_fit": "contain",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "swatches_tTT7Ce": {
+                      "type": "swatches",
+                      "name": "t:names.swatches",
+                      "settings": {
+                        "product_swatches_alignment": "flex-start",
+                        "product_swatches_alignment_mobile": "flex-start",
+                        "hide_padding": false,
+                        "product_swatches_padding_top": 4,
+                        "product_swatches_padding_bottom": 0,
+                        "product_swatches_padding_left": 0,
+                        "product_swatches_padding_right": 0,
+                        "show_product_image_swatches": true,
+                        "product_image_swatch_style": "square",
+                        "product_image_swatch_size": 48,
+                        "show_horizontal_scroll": false
+                      },
+                      "blocks": {}
+                    },
+                    "price_4cpGaz": {
+                      "type": "price",
+                      "name": "t:names.product_price",
+                      "settings": {
+                        "show_sale_price_first": true,
+                        "show_installments": false,
+                        "show_tax_info": false,
+                        "type_preset": "h6",
+                        "width": "100%",
+                        "alignment": "left",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "color": "var(--color-foreground)",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_title_Ph7kbp",
+                    "text_nQxzAU",
+                    "product_card_gallery_6Yijzk",
+                    "swatches_tTT7Ce",
+                    "price_4cpGaz"
+                  ]
+                },
                 "text_qYD8Vn": {
                   "type": "text",
                   "name": "t:names.heading",
+                  "disabled": true,
                   "settings": {
                     "text": "<h2>Atlas</h2>",
                     "width": "fit-content",
@@ -837,40 +972,16 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
-                },
-                "text_HME63g": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Wear your ticket to roam with Atlas by<em>Sito Shades</em>. This lightweight aviator frame pairs bold confidence with effortless cool, perfect for sunrises, city streets, or spontaneous road trips. Crafted from durable eco acetate and fitted with premium UV lenses, Atlas keeps your eyes protected while moving seamlessly from adventure to everyday. Designed in Australia, it’s freedom with a refined edge — no itinerary required.<br/><br/></p>",
-                    "width": "100%",
-                    "max_width": "none",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
                 }
               },
               "block_order": [
-                "text_qYD8Vn",
-                "text_HME63g"
+                "product_card_DWXcC3",
+                "text_qYD8Vn"
               ]
             },
             "button_QAQg4e": {
               "type": "button",
+              "disabled": true,
               "settings": {
                 "label": "Shop now",
                 "link": "shopify://collections/all",
