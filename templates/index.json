@@ -886,7 +886,7 @@
                       "type": "_product-card-gallery",
                       "settings": {
                         "show_second_image_on_hover": false,
-                        "image_ratio": "square",
+                        "image_ratio": "landscape",
                         "media_fit": "contain",
                         "border": "none",
                         "border_width": 1,
