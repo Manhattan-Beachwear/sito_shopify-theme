@@ -1133,8 +1133,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 20,
+        "padding-block-end": 20
       }
     },
     "section_zw3eCB": {
@@ -1184,16 +1184,16 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>SUSTAINABILITY</h2>",
+                "text": "<h2>Sito Shades  🤝 Sustainability</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "custom",
-                "font": "var(--font-heading--family)",
+                "font": "var(--font-subheading--family)",
                 "font_size": "1.5rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
-                "case": "none",
+                "case": "uppercase",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
                 "background": false,
