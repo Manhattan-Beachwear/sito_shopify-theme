@@ -730,6 +730,7 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/Sito_Shades_Atlas_Black_2.jpg",
+            "image_mobile": "shopify://shop_images/Sito_Shades_Atlas_Black_2.jpg",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -1007,7 +1008,7 @@
         "media_position": "left",
         "media_width": "medium",
         "media_height": "60svh",
-        "section_width": "full-width",
+        "section_width": "page-width",
         "extend_media": true,
         "color_scheme": "scheme-4",
         "padding-block-start": 0,
