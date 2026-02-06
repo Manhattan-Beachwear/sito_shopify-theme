@@ -1193,7 +1193,7 @@
                 "font_size": "1.5rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
-                "case": "uppercase",
+                "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
                 "background": false,
@@ -1210,7 +1210,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>We’re committed to doing our part to protect the planet, which is why we prioritze sustainably made sunglasses. Our use of plant based acetate frames underlines our dedication to sustainability, allowing you to make a fashion statement that’s also a more eco-friendly choice.</p><p>We continue to search for ways to do our part. From recyclable and re-purposed packaging to quality long-lasting, sustainable materials in every product. And we’ll keep searching for ways to make things more sustainable.</p>",
+                "text": "<p>We’re committed to doing our part to protect the planet, which is why we prioritize sustainably made sunglasses. Our use of plant based acetate frames underlines our dedication to sustainability, allowing you to make a fashion statement that’s also a more eco-friendly choice.</p><p>We continue to search for ways to do our part. From recyclable and re-purposed packaging to quality long-lasting, sustainable materials in every product. And we’ll keep searching for ways to make things more sustainable.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
