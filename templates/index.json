@@ -213,7 +213,6 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "show_second_image_on_hover": true,
                 "image_ratio": "adapt",
                 "media_fit": "cover",
                 "border": "none",
@@ -731,6 +730,7 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/Sito_Shades_Atlas_Black_2.jpg",
+            "image_mobile": "shopify://shop_images/Sito_Shades_Atlas_Black_2.jpg",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -884,7 +884,6 @@
                     "product_card_gallery_6Yijzk": {
                       "type": "_product-card-gallery",
                       "settings": {
-                        "show_second_image_on_hover": false,
                         "image_ratio": "square",
                         "media_fit": "contain",
                         "border": "none",
@@ -1009,7 +1008,7 @@
         "media_position": "left",
         "media_width": "medium",
         "media_height": "60svh",
-        "section_width": "full-width",
+        "section_width": "page-width",
         "extend_media": true,
         "color_scheme": "scheme-4",
         "padding-block-start": 0,
@@ -1121,7 +1120,6 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "show_second_image_on_hover": true,
                 "image_ratio": "square",
                 "media_fit": "cover",
                 "border": "none",
