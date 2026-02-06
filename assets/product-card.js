@@ -764,6 +764,7 @@ export class ProductCard extends Component {
    */
   previewImage(event) {
     if (event.pointerType !== 'mouse') return;
+    if (this.refs.cardGallery?.dataset.showSecondImageOnHover === 'false') return;
 
     const { slideshow } = this.refs;
 
