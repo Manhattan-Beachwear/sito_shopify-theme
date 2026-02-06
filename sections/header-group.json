@@ -21,7 +21,7 @@
             "text": "Shop our new spring collection here",
             "link": "shopify://collections/2026-collection",
             "font": "var(--font-subheading--family)",
-            "font_size": "0.875rem",
+            "font_size": "0.75rem",
             "weight": "",
             "letter_spacing": "normal",
             "case": "uppercase"
