@@ -213,6 +213,7 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
+                "show_second_image_on_hover": true,
                 "image_ratio": "adapt",
                 "media_fit": "cover",
                 "border": "none",
@@ -883,6 +884,7 @@
                     "product_card_gallery_6Yijzk": {
                       "type": "_product-card-gallery",
                       "settings": {
+                        "show_second_image_on_hover": false,
                         "image_ratio": "square",
                         "media_fit": "contain",
                         "border": "none",
@@ -1119,6 +1121,7 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
+                "show_second_image_on_hover": true,
                 "image_ratio": "square",
                 "media_fit": "cover",
                 "border": "none",
