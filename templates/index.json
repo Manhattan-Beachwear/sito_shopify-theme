@@ -885,7 +885,7 @@
                     "product_card_gallery_6Yijzk": {
                       "type": "_product-card-gallery",
                       "settings": {
-                        "show_second_image_on_hover": true,
+                        "show_second_image_on_hover": false,
                         "image_ratio": "square",
                         "media_fit": "contain",
                         "border": "none",
