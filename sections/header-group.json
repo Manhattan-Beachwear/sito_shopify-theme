@@ -18,9 +18,9 @@
           "type": "_announcement",
           "name": "t:names.announcement",
           "settings": {
-            "text": "New Collection Now LIVE!",
+            "text": "Shop our new spring collection here",
             "link": "shopify://collections/2026-collection",
-            "font": "var(--font-body--family)",
+            "font": "var(--font-subheading--family)",
             "font_size": "0.875rem",
             "weight": "",
             "letter_spacing": "normal",
