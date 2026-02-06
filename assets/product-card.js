@@ -1159,15 +1159,6 @@ export class ProductCard extends Component {
         if (newPriceElement && currentPriceContainer) {
           currentPriceContainer.innerHTML = newPriceElement.innerHTML;
         }
-
-        // Update variant name (if we have it in the fetched HTML)
-        if (newVariantNameElement && this.variantPicker?.refs?.currentVariantName) {
-          const variantNameDisplay = this.variantPicker.refs.currentVariantName;
-          const displayElement = Array.isArray(variantNameDisplay) ? variantNameDisplay[0] : variantNameDisplay;
-          if (displayElement instanceof HTMLElement) {
-            displayElement.textContent = newVariantNameElement.textContent || '';
-          }
-        }
       })
       .catch(() => {
         // Silently handle errors
