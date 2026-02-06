@@ -147,6 +147,7 @@
             "card-gallery": {
               "type": "_product-card-gallery",
               "settings": {
+                "show_second_image_on_hover": true,
                 "image_ratio": "adapt",
                 "media_fit": "cover",
                 "border": "none",
