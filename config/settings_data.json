@@ -90,6 +90,7 @@
     "currency_code_enabled_cart_items": true,
     "mobile_quick_add": true,
     "quick_add_color_scheme": "scheme-1",
+    "product_card_second_image_fit": "cover",
     "product_card_carousel": false,
     "empty_state_collection": "new-2025",
     "product_corner_radius": 4,
