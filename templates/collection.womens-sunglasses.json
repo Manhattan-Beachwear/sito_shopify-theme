@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Mens Sunglasses</h2>",
+            "text": "<h2>Womens Sunglasses</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Shop our collection of mens sunglasses. Designed in Australia, each pair of Sito Shades is handcrafted from plant-based acetate. Sustainably-made mens sunglasses - explore the collection.</p>",
+            "text": "<p>Shop our collection of womens sunglasses. Designed in Australia, each pair of Sito Shades is handcrafted from plant-based acetate. Sustainably-made womens sunglasses - explore the collection.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "center",
@@ -306,8 +306,8 @@
         "full_width_on_mobile": true,
         "columns_gap_horizontal": 16,
         "columns_gap_vertical": 24,
-        "padding-inline-start": 0,
-        "padding-inline-end": 0,
+        "padding-inline-start": 20,
+        "padding-inline-end": 20,
         "color_scheme": "scheme-1",
         "padding-block-start": 0,
         "padding-block-end": 20,
