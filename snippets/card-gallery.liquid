@@ -250,7 +250,15 @@
             render 'product-media', media: media, sizes: sizes, loading: loading, preview_image_only: true
           endcapture
 
-          render 'slideshow-slide', slide_id: media.id, index: forloop.index, hidden: hidden, class: class, attributes: attributes, children: slideshow_children, media_fit: media_fit
+          comment
+            Second slide (hover image) uses global second-image fit when hover is enabled; first image uses block media_fit.
+          endcomment
+          assign slide_media_fit = media_fit
+          if show_second_image_on_hover_effective and forloop.index == 2
+            assign slide_media_fit = settings.product_card_second_image_fit | default: 'contain'
+          endif
+
+          render 'slideshow-slide', slide_id: media.id, index: forloop.index, hidden: hidden, class: class, attributes: attributes, children: slideshow_children, media_fit: slide_media_fit
         endfor
       endcapture
 
@@ -337,7 +345,7 @@
   }
 
   .card-gallery .product-media-container img {
-    object-fit: contain;
+    object-fit: var(--product-media-fit, contain);
     mix-blend-mode: multiply;
     max-width: 100%;
     max-height: 100%;

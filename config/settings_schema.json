@@ -2355,6 +2355,24 @@
         "default": true
       },
       {
+        "type": "select",
+        "id": "product_card_second_image_fit",
+        "label": "t:settings.second_image_fit",
+        "options": [
+          {
+            "value": "contain",
+            "label": "t:options.contain"
+          },
+          {
+            "value": "cover",
+            "label": "t:options.cover"
+          }
+        ],
+        "default": "contain",
+        "info": "t:settings.second_image_fit_info",
+        "visible_if": "{{ settings.show_second_image_on_hover == true }}"
+      },
+      {
         "type": "checkbox",
         "id": "product_card_carousel",
         "label": "t:settings.product_card_carousel",
