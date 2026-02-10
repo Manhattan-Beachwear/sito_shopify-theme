@@ -185,7 +185,12 @@
                 endif
               endif
             %}
-
+            {%- comment -%} When using product image as swatch, don't show the swatch if the variant has no image. {%- endcomment -%}
+            {% if show_product_image_swatches or total_swatch_count == 0 %}
+              {% if featured_media == blank %}
+                {% continue %}
+              {% endif %}
+            {% endif %}
             <li class="variant-option__swatch">
               <label
                 data-media-id="{{ featured_media.id }}"
