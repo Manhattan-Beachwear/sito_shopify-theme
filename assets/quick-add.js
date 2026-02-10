@@ -25,10 +25,12 @@ export class QuickAddComponent extends Component {
     const url = new URL(productLink.href);
 
     // Priority 1: Use variant from URL if present (most reliable for featured image swatches)
+    // Priority 1: Use variant from URL if present (most reliable for featured image swatches)
     if (url.searchParams.has('variant')) {
       return url.toString();
     }
 
+    // Priority 2: Try to get variant ID from selected input
     // Priority 2: Try to get variant ID from selected input
     const selectedVariantId = this.#getSelectedVariantId();
     if (selectedVariantId) {
@@ -167,6 +169,10 @@ export class QuickAddComponent extends Component {
   async fetchProductPage(productPageUrl) {
     if (!productPageUrl) return null;
 
+    // #region agent log
+    fetch('http://127.0.0.1:7247/ingest/cd9e77b3-1faf-48a3-82be-694fad5c3e6d',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'assets/quick-add.js:145',message:'Fetching product page',data:{productPageUrl},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+    // #endregion
+
     // We use this to abort the previous fetch request if it's still pending.
     this.#abortController?.abort();
     this.#abortController = new AbortController();
@@ -182,6 +188,12 @@ export class QuickAddComponent extends Component {
 
       const responseText = await response.text();
       const html = new DOMParser().parseFromString(responseText, 'text/html');
+
+      // #region agent log
+      const debugWrapperInFetched = html.querySelector('[data-debug-variant-picker="true"]');
+      const debugWrapperEl = debugWrapperInFetched instanceof HTMLElement ? debugWrapperInFetched : null;
+      fetch('http://127.0.0.1:7247/ingest/cd9e77b3-1faf-48a3-82be-694fad5c3e6d',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'assets/quick-add.js:162',message:'Product page fetched',data:{productPageUrl,hasDebugWrapper:!!debugWrapperEl,debugWrapperData:debugWrapperEl?{enableCombined:debugWrapperEl.dataset.debugEnableCombined,enableCombinedSource:debugWrapperEl.dataset.debugEnableCombinedSource,hasMetafield:debugWrapperEl.dataset.debugHasMetafield,renderingMode:debugWrapperEl.dataset.debugRenderingMode}:null},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
 
       return html;
     } catch (error) {
@@ -221,8 +233,14 @@ export class QuickAddComponent extends Component {
       };
       console.log('Debug Wrapper Found:', debugData);
       
+      // #region agent log
+      fetch('http://127.0.0.1:7247/ingest/cd9e77b3-1faf-48a3-82be-694fad5c3e6d',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'assets/quick-add.js:189',message:'Debug wrapper before morph',data:debugData,timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+      // #endregion
     } else {
       console.warn('⚠️ No debug wrapper found in productGrid');
+      // #region agent log
+      fetch('http://127.0.0.1:7247/ingest/cd9e77b3-1faf-48a3-82be-694fad5c3e6d',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'assets/quick-add.js:194',message:'No debug wrapper found before morph',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+      // #endregion
     }
     
     const variantPickerStandard = productGrid.querySelector('variant-picker');
@@ -374,7 +392,10 @@ export class QuickAddComponent extends Component {
             console.warn('🔍 [DEBUG] Swatches Fieldset HTML (first 500 chars):', swatchesFieldset.outerHTML.substring(0, 500));
           }
         }
-      
+        
+        // #region agent log
+        fetch('http://127.0.0.1:7247/ingest/cd9e77b3-1faf-48a3-82be-694fad5c3e6d',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'assets/quick-add.js:302',message:'Variant picker CL dual detailed inspection',data:details,timestamp:Date.now(),sessionId:'debug-session',runId:'run3',hypothesisId:'F'})}).catch(()=>{});
+        // #endregion
       } catch (e) {
         console.error('🔍 [DEBUG] Error during variant picker inspection:', e);
       }
@@ -386,6 +407,16 @@ export class QuickAddComponent extends Component {
       'variant-picker-cl-dual': !!modalVariantPickerCLDual,
       'combined-listing-inputs': modalCombinedListingInputs.length
     });
+
+    // #region agent log (post-fix verification: modal has CL picker when product has combined listing)
+    if (modalVariantPickerAny) {
+      fetch('http://127.0.0.1:7247/ingest/cd9e77b3-1faf-48a3-82be-694fad5c3e6d',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'assets/quick-add.js:post-fix',message:'Combined listing picker found in modal after morph',data:{hasCL:!!modalVariantPickerCL,hasCLDual:!!modalVariantPickerCLDual,swatchCount:swatches.length},timestamp:Date.now(),sessionId:'debug-session',runId:'post-fix',hypothesisId:'H1'})}).catch(()=>{});
+    }
+    // #endregion
+
+    // #region agent log
+    fetch('http://127.0.0.1:7247/ingest/cd9e77b3-1faf-48a3-82be-694fad5c3e6d',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'assets/quick-add.js:330',message:'After morph - combined listing check',data:{hasVariantPickerCL:!!modalVariantPickerCL,hasVariantPickerCLDual:!!modalVariantPickerCLDual,combinedListingInputsCount:modalCombinedListingInputs.length,swatchContainersCount:swatches.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'E'})}).catch(()=>{});
+    // #endregion
     
     console.groupEnd();
 
@@ -577,7 +608,7 @@ export class QuickAddComponent extends Component {
     if (!selectedVariantId) {
       selectedVariantId = this.#getSelectedVariantId();
     }
-    
+
     if (!selectedVariantId) return;
 
     // Check if this is a combined listing variant picker

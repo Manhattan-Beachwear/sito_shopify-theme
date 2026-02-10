@@ -100,6 +100,15 @@
             endif
           endif
 
+          # When "Show product images as swatches" is on, use swatch UI so product images display as swatches
+          if show_product_image_swatches
+            if block_settings.variant_style == 'dropdown'
+              assign variant_style = 'swatch_dropdown'
+            else
+              assign variant_style = 'swatch'
+            endif
+          endif
+
           if variant_style == 'buttons' and settings.variant_button_width == 'equal-width-buttons'
             assign fieldset_id = section.id | append: '-' | append: product_resource.id | append: '-' | append: product_option.name | handleize
             assign option_id_attribute = 'data-option-id="' | append: fieldset_id | append: '"'
