@@ -218,7 +218,7 @@
                   "settings": {
                     "label": "Shop now",
                     "link": "shopify://products/ryker-black-slate-polar",
-                    "open_in_new_tab": false,
+                    "open_in_new_tab": true,
                     "style_class": "button",
                     "width": "fit-content",
                     "custom_width": 100,
@@ -395,7 +395,7 @@
         "section_height": "custom",
         "section_height_custom": 85,
         "section_width": "full-width",
-        "toggle_overlay": false,
+        "toggle_overlay": true,
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
