@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Round & Oval Sunglasses</h2>",
+            "text": "<h2>Cat Eye Sunglasses</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Shop our collection of round and oval sunglasses for men and women. Designed in Australia, each pair of Sito Shades is handcrafted from plant-based acetate. Discover your style and shop round sunglasses below.</p>",
+            "text": "<p>A frame shape that never goes out of style; cat eye sunglasses. Shop our selection of cat eyes for women. Designed in Australia, each pair of Sito Shades is handcrafted from plant-based acetate. Explore the collection of cat eye sunglasses below.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "center",
