@@ -486,7 +486,7 @@
       ],
       "name": "t:names.product_recommendations",
       "settings": {
-        "product": "kinetic-black-iron-grey-polar",
+        "product": "boston-nori-brown-polar",
         "recommendation_type": "related",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
