@@ -352,7 +352,7 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 48,
         "padding-block-end": 48,
-        "enable_combined_listings": false,
+        "enable_combined_listings": true,
         "show_product_image_swatches": false,
         "product_image_swatch_style": "circle",
         "product_image_swatch_size": 48,
