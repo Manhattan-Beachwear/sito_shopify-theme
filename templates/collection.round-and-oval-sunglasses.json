@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Square Sunglasses</h2>",
+            "text": "<h2>Round & Oval Sunglasses</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Shop our collection of square sunglasses for men and women. Designed in Australia, each pair of Sito Shades is handcrafted from plant-based acetate. Discover your style and shop square sunglasses below.</p>",
+            "text": "<p>Shop our collection of round and oval sunglasses for men and women. Designed in Australia, each pair of Sito Shades is handcrafted from plant-based acetate. Discover your style and shop round sunglasses below.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "center",
@@ -868,6 +868,20 @@
         "padding-block-end": 0
       }
     },
+    "divider_kpGfpc": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
+      }
+    },
     "section_qaTBie": {
       "type": "section",
       "blocks": {
@@ -996,20 +1010,6 @@
         "padding-block-start": 24,
         "padding-block-end": 100,
         "gap_between_elements": 84
-      }
-    },
-    "divider_kpGfpc": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "",
-        "section_width": "full-width",
-        "thickness": 1,
-        "corner_radius": "square",
-        "width_percent": 100,
-        "alignment_horizontal": "center",
-        "padding-block-start": 16,
-        "padding-block-end": 16
       }
     }
   },
