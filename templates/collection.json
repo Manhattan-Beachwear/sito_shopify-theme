@@ -279,8 +279,8 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 0,
         "padding-block-end": 32,
-        "enable_combined_listings": false,
-        "show_product_image_swatches": false,
+        "enable_combined_listings": true,
+        "show_product_image_swatches": true,
         "product_image_swatch_style": "circle",
         "product_image_swatch_size": 48,
         "show_horizontal_scroll": false
