@@ -335,7 +335,7 @@
       ],
       "name": "t:names.products_grid",
       "settings": {
-        "collection": "collection-grid-homepage",
+        "collection": "2026-collection",
         "layout_type": "carousel",
         "carousel_on_mobile": true,
         "max_products": 16,
