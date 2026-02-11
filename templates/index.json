@@ -1073,7 +1073,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>New!</h2>",
+                "text": "<h2>Best Sellers</h2>",
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "left",
