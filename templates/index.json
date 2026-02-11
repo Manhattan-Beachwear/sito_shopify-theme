@@ -701,7 +701,7 @@
         ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
-        "columns": 2,
+        "columns": 3,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 10,
@@ -818,7 +818,7 @@
                   "type": "product-card",
                   "name": "t:names.product_card",
                   "settings": {
-                    "product": "atlas",
+                    "product": "atlas-black-cedar-gradient",
                     "product_card_gap": 4,
                     "inherit_color_scheme": true,
                     "color_scheme": "",
