@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Round & Oval Sunglasses</h2>",
+            "text": "<h2>Rectangle Sunglasses</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Shop our collection of round and oval sunglasses for men and women. Designed in Australia, each pair of Sito Shades is handcrafted from plant-based acetate. Discover your style and shop round sunglasses below.</p>",
+            "text": "<p>Shop our collection of rectangle sunglasses for men and women. Designed in Australia, each pair of Sito Shades is handcrafted from plant-based acetate. Discover your style and shop rectangle sunglasses below.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "center",
