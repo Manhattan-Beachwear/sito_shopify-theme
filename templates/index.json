@@ -1259,7 +1259,7 @@
       ],
       "name": "t:names.products_grid",
       "settings": {
-        "collection": "2026-collection",
+        "collection": "best-sellers",
         "layout_type": "carousel",
         "carousel_on_mobile": true,
         "max_products": 16,
