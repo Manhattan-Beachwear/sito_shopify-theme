@@ -544,8 +544,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 100,
+        "padding-block-end": 100
       }
     },
     "collection_list_QWL8P8": {
@@ -713,8 +713,8 @@
         "section_width": "page-width",
         "gap": 12,
         "color_scheme": "scheme-3",
-        "padding-block-start": 48,
-        "padding-block-end": 48,
+        "padding-block-start": 100,
+        "padding-block-end": 100,
         "enable_combined_listings": false,
         "show_product_image_swatches": false,
         "product_image_swatch_style": "circle",
@@ -1274,8 +1274,8 @@
         "horizontal_alignment": "center",
         "gap": 28,
         "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 48,
+        "padding-block-start": 100,
+        "padding-block-end": 100,
         "enable_combined_listings": true,
         "show_product_image_swatches": false,
         "product_image_swatch_style": "circle",
