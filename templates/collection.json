@@ -794,27 +794,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "button_8HUfDP": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "Our Story",
-                "link": "https://us.sitoshades.com/pages/our-story",
-                "open_in_new_tab": false,
-                "style_class": "button-secondary",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "text_DTtBeJ",
-            "text_UzqXmw",
-            "button_8HUfDP"
+            "text_UzqXmw"
           ]
         }
       },
@@ -850,6 +834,20 @@
         "gradient_direction": "to top",
         "padding-block-start": 0,
         "padding-block-end": 0
+      }
+    },
+    "divider_wkyq6h": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
       }
     },
     "section_qaTBie": {
@@ -990,6 +988,7 @@
     "product_recommendations_8qw6PE",
     "section_TEgXcc",
     "section_k39jG8",
+    "divider_wkyq6h",
     "section_qaTBie",
     "marquee_gDAaX9"
   ]
