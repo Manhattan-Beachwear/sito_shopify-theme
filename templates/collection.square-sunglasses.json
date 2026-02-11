@@ -997,6 +997,20 @@
         "padding-block-end": 100,
         "gap_between_elements": 84
       }
+    },
+    "divider_kpGfpc": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
+      }
     }
   },
   "order": [
@@ -1007,6 +1021,7 @@
     "product_recommendations_9cezwV",
     "section_ULNYTq",
     "section_wk48Xd",
+    "divider_kpGfpc",
     "section_qaTBie",
     "marquee_gDAaX9"
   ]
