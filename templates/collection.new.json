@@ -406,7 +406,7 @@
                 "alignment": "left",
                 "type_preset": "custom",
                 "font": "var(--font-heading--family)",
-                "font_size": "1rem",
+                "font_size": "0.875rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "uppercase",
@@ -486,7 +486,7 @@
       ],
       "name": "t:names.product_recommendations",
       "settings": {
-        "product": "kinetic-cherry-red-iron-grey-polar",
+        "product": "diamond-black-iron-grey-polar",
         "recommendation_type": "related",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
