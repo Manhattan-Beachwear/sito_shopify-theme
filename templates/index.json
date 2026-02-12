@@ -807,7 +807,7 @@
               "settings": {
                 "text": "<p>Fashion should be unexpectedly beautiful. Never boring. The key to style is balance in contrast. Since inception, Sito Shades have  travelled far, seeking inspiration and diversity, bringing unique designs with a soul of their own.</p><p>Our journey continues, making a positive impact with every pair of shades.</p>",
                 "width": "100%",
-                "max_width": "none",
+                "max_width": "normal",
                 "alignment": "center",
                 "type_preset": "custom",
                 "font": "var(--font-body--family)",
@@ -1013,8 +1013,8 @@
       "name": "t:names.collections_carousel",
       "settings": {
         "collection_list": [
-          "best-sellers",
           "2026-collection",
+          "best-sellers",
           "womens",
           "mens"
         ],
