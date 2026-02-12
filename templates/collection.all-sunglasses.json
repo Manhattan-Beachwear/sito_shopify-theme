@@ -16,7 +16,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Best Selling Sunglasses</h2>",
+            "text": "<h2>All Styles</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Shop our collection of best selling sunglasses. Designed in Australia, each pair of Sito Shades is handcrafted from plant-based acetate. Sustainably-made best sellers - explore the collection.</p>",
+            "text": "<p>Shop our complete collection of Sito Shades. Designed in Australia, each pair of Sito Shades is handcrafted from plant-based acetate. Sustainable style, thoughtfully made. </p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "center",
