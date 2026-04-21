@@ -1205,7 +1205,7 @@
                       "type": "_product-card-gallery",
                       "settings": {
                         "show_second_image_on_hover": false,
-                        "image_ratio": "landscape",
+                        "image_ratio": "portrait",
                         "media_fit": "contain",
                         "border": "none",
                         "border_width": 1,
