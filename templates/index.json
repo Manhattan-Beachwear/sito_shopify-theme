@@ -1137,7 +1137,7 @@
                   "type": "product-card",
                   "name": "t:names.product_card",
                   "settings": {
-                    "product": "atlas-black-cedar-gradient",
+                    "product": "aura-milky-sage-smokey-grey",
                     "product_card_gap": 4,
                     "inherit_color_scheme": true,
                     "color_scheme": "",
