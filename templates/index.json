@@ -658,7 +658,7 @@
         "layout_type": "carousel",
         "carousel_on_mobile": true,
         "max_products": 16,
-        "columns": 2,
+        "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "44cqw",
         "columns_gap": 8,
