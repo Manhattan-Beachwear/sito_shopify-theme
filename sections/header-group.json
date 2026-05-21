@@ -18,7 +18,7 @@
           "type": "_announcement",
           "name": "t:names.announcement",
           "settings": {
-            "text": "Shop our new spring collection here",
+            "text": "OUR MEMORIAL DAY SALE IS LIVE. SAVE 25%: USE CODE MDW25 AT CHECKOUT.",
             "link": "shopify://collections/2026-collection",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
