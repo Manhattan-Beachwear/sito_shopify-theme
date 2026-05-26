@@ -99,6 +99,7 @@
       "blocks": {
         "hero_slide_HnFLjG": {
           "type": "_hero-slide",
+          "disabled": true,
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/Screenshot_2026-04-21_161526.png",
