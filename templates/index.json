@@ -1050,8 +1050,8 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/SitoShadesBostonNori_3_2.jpg",
-            "image_mobile": "shopify://shop_images/SitoShadesBostonNori_3_2.jpg",
+            "image": "shopify://shop_images/Sito-DiamondTangelo_7_1.jpg",
+            "image_mobile": "shopify://shop_images/Sito-DiamondTangelo_5_1.jpg",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -1138,7 +1138,7 @@
                   "type": "product-card",
                   "name": "t:names.product_card",
                   "settings": {
-                    "product": "boston-nori-brown-polar",
+                    "product": "diamond-tangelo-brown-polar",
                     "product_card_gap": 4,
                     "inherit_color_scheme": true,
                     "color_scheme": "",
@@ -1180,7 +1180,7 @@
                     "text_nQxzAU": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Step out in confidence with the Boston Nori Polarised Wayfarer by<em>Sito Shades</em>. This larger-fit frame peeks effortlessly from beneath a hoodie or pairs seamlessly with city-ready outfits. Designed to complement a variety of face shapes, the Boston in Nori green combines style, comfort, and performance with premium polarised lenses for ultimate UV protection. <br/></p>",
+                        "text": "<p>Unleash your inner gem with the Diamond frame! Geometric angles along the base create a stunning diamond-like effect, while beveled edges add an elevated touch. Embrace edgy sophistication with a twist of geometric flair.<br/><br/></p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
