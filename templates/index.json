@@ -99,7 +99,6 @@
       "blocks": {
         "hero_slide_HnFLjG": {
           "type": "_hero-slide",
-          "disabled": true,
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/Screenshot_2026-04-21_161526.png",
@@ -166,7 +165,7 @@
                 "text_6Wrrfr": {
                   "type": "text",
                   "settings": {
-                    "text": "<h2>25% OFF SITEWIDE</h2>",
+                    "text": "<h2>SUMMER'S HERE</h2>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "center",
@@ -191,7 +190,7 @@
                 "text_hKDqyk": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Celebrate Summer with Sito Shades</p><p>Take 25% off all sunglasses with code <strong>MDW25</strong></p>",
+                    "text": "<p><strong>You'll get it when you try them on</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -216,7 +215,7 @@
                 "button_ajgBtd": {
                   "type": "button",
                   "settings": {
-                    "label": "Shop now",
+                    "label": "Shop SITO",
                     "link": "shopify://collections/2026-collection",
                     "open_in_new_tab": false,
                     "style_class": "button",
