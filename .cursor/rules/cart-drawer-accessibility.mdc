@@ -200,6 +200,25 @@ actions:
   - Ensure cart drawer works with keyboard-only navigation
   - Test focus management with multiple cart activators
 
+  **Focus Contrast (Cart Drawer):**
+
+  Theme buttons set `outline-color: var(--button-background-color)` globally. On light color schemes where the primary button background is cream/off-white (e.g. `#f8f5e3` on `#fcfbf4`), checkout and remove button focus rings are nearly invisible.
+
+  Override in `snippets/header-actions.liquid` scoped to `.cart-drawer__dialog`:
+
+  ```css
+  .cart-drawer__dialog :is(button, a, input, summary):focus-visible {
+    outline: var(--focus-outline-width) solid var(--color-foreground-heading);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  .cart-drawer__dialog .button-unstyled:focus-visible {
+    overflow: visible;
+  }
+  ```
+
+  Use `--color-foreground-heading` (not `--button-background-color`) so focus adapts per color scheme while staying high contrast. Also set `overflow: visible` on `button-unstyled` focus — default `overflow: hidden` clips the outline on close and quantity buttons.
+
 metadata:
 priority: high
 version: 1.0

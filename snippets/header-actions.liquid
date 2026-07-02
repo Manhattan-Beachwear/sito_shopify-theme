@@ -268,4 +268,26 @@
   .cart-bubble--animating .cart-bubble__text {
     animation: cartBubbleSlideIn var(--animation-speed) var(--animation-easing);
   }
+
+  /* High-contrast focus indicators — overrides button outline-color (background) on light schemes */
+  .cart-drawer__dialog :is(button, a, input, summary):focus-visible {
+    outline: var(--focus-outline-width) solid var(--color-foreground-heading);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  .cart-drawer__dialog .button-unstyled:focus-visible {
+    overflow: visible;
+  }
+
+  @supports not (background-color: rgb(from red 150 g b / alpha)) {
+    .cart-drawer__dialog .close-button:focus-visible::after {
+      border-color: var(--color-foreground-heading);
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    .cart-drawer__dialog :is(button, a, input, summary):focus-visible {
+      outline-width: calc(var(--focus-outline-width) * 2);
+    }
+  }
 {% endstylesheet %}
