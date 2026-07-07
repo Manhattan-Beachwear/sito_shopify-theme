@@ -165,7 +165,7 @@
                 "text_6Wrrfr": {
                   "type": "text",
                   "settings": {
-                    "text": "<h2>SUMMER'S HERE</h2>",
+                    "text": "<h2>THE RESTOCK: PART ONE</h2>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "center",
@@ -190,7 +190,7 @@
                 "text_hKDqyk": {
                   "type": "text",
                   "settings": {
-                    "text": "<p><strong>You'll get it when you try them on</strong></p>",
+                    "text": "<p><strong>Summer Favorites: Orion & Now or Never</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -215,7 +215,7 @@
                 "button_ajgBtd": {
                   "type": "button",
                   "settings": {
-                    "label": "Shop SITO",
+                    "label": "Shop RESTOCK",
                     "link": "shopify://collections/2026-collection",
                     "open_in_new_tab": false,
                     "style_class": "button",
