@@ -1049,7 +1049,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/Sito-DiamondTangelo_7_1.jpg",
+            "image": "shopify://shop_images/Screenshot_2026-07-07_101215.png",
             "image_mobile": "shopify://shop_images/Sito-DiamondTangelo_5_1.jpg",
             "link": "",
             "video_loop": true,
@@ -1072,7 +1072,7 @@
               "type": "text",
               "name": "t:names.caption",
               "settings": {
-                "text": "<p>Bestseller</p>",
+                "text": "<p>NEW RELEASE</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1137,7 +1137,7 @@
                   "type": "product-card",
                   "name": "t:names.product_card",
                   "settings": {
-                    "product": "diamond-tangelo-brown-polar",
+                    "product": "orion-oreo-tort-mist",
                     "product_card_gap": 4,
                     "inherit_color_scheme": true,
                     "color_scheme": "",
@@ -1179,7 +1179,7 @@
                     "text_nQxzAU": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Unleash your inner gem with the Diamond frame! Geometric angles along the base create a stunning diamond-like effect, while beveled edges add an elevated touch. Embrace edgy sophistication with a twist of geometric flair.<br/><br/></p>",
+                        "text": "<p>Vintage curves, modern attitude. <em>Perfect for: </em>Sunday markets, oat lattes, and looking like you have your life together.</p>",
                         "width": "100%",
                         "max_width": "none",
                         "alignment": "left",
