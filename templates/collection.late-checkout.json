@@ -456,6 +456,32 @@
     "slideshow_GPHVyH": {
       "type": "slideshow",
       "blocks": {
+        "hero_slide_AJ8x4W": {
+          "type": "_hero-slide",
+          "settings": {
+            "media_type_1": "image",
+            "image_1": "shopify://shop_images/Sito_Shades_Late_Checkout.jpg",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "hero_slide_7Ne6kk": {
           "type": "_hero-slide",
           "settings": {
@@ -585,41 +611,15 @@
             "padding-inline-end": 0
           },
           "blocks": {}
-        },
-        "hero_slide_AJ8x4W": {
-          "type": "_hero-slide",
-          "settings": {
-            "media_type_1": "image",
-            "image_1": "shopify://shop_images/Sito_Shades_Late_Checkout.jpg",
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
         }
       },
       "block_order": [
+        "hero_slide_AJ8x4W",
         "hero_slide_7Ne6kk",
         "hero_slide_KCXGH7",
         "hero_slide_TzExwg",
         "hero_slide_UPgizg",
-        "hero_slide_b9XeVG",
-        "hero_slide_AJ8x4W"
+        "hero_slide_b9XeVG"
       ],
       "name": "t:names.slideshow",
       "settings": {
