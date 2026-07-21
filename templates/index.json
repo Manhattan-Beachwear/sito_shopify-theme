@@ -1050,7 +1050,7 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/AtlasBerry.jpg",
-            "image_mobile": "shopify://shop_images/Sito-DiamondTangelo_5_1.jpg",
+            "image_mobile": "shopify://shop_images/AtlasBerry.jpg",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
