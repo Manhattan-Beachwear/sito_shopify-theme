@@ -165,13 +165,13 @@
                 "text_6Wrrfr": {
                   "type": "text",
                   "settings": {
-                    "text": "<h2>THE RESTOCK: PART ONE</h2>",
+                    "text": "<h2>LATE CHECKOUT COLLECTION</h2>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "center",
                     "type_preset": "custom",
                     "font": "var(--font-subheading--family)",
-                    "font_size": "2.5rem",
+                    "font_size": "1.5rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "uppercase",
@@ -190,7 +190,7 @@
                 "text_hKDqyk": {
                   "type": "text",
                   "settings": {
-                    "text": "<p><strong>Summer Favorites: Orion & Now or Never</strong></p>",
+                    "text": "<p><strong>A nostalgic nod to retro summers and sunlit mornings</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
