@@ -456,11 +456,12 @@
     "slideshow_GPHVyH": {
       "type": "slideshow",
       "blocks": {
-        "hero_slide_AJ8x4W": {
+        "hero_slide_b9XeVG": {
           "type": "_hero-slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/Sito_Shades_Late_Checkout.jpg",
+            "image_1": "shopify://shop_images/Screenshot_2026-07-22_115503.png",
+            "image_1_mobile": "shopify://shop_images/Sito_Shades_Late_Checkout.jpg",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -486,7 +487,8 @@
           "type": "_hero-slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/Lourdes_Rouge_1_1.jpg",
+            "image_1": "shopify://shop_images/Screenshot_2026-07-22_115447.png",
+            "image_1_mobile": "shopify://shop_images/Lourdes_Rouge_1_1.jpg",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -559,67 +561,13 @@
             "padding-inline-end": 0
           },
           "blocks": {}
-        },
-        "hero_slide_UPgizg": {
-          "type": "_hero-slide",
-          "settings": {
-            "media_type_1": "image",
-            "image_1": "shopify://shop_images/Screenshot2026-07-21074540.png",
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "hero_slide_b9XeVG": {
-          "type": "_hero-slide",
-          "settings": {
-            "media_type_1": "image",
-            "image_1": "shopify://shop_images/OrionClassicTort.jpg",
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "hero_slide_AJ8x4W",
+        "hero_slide_b9XeVG",
         "hero_slide_7Ne6kk",
         "hero_slide_KCXGH7",
-        "hero_slide_TzExwg",
-        "hero_slide_UPgizg",
-        "hero_slide_b9XeVG"
+        "hero_slide_TzExwg"
       ],
       "name": "t:names.slideshow",
       "settings": {
@@ -630,7 +578,7 @@
         "autoplay_speed": 4,
         "section_height": "large",
         "section_height_custom": 50,
-        "section_width": "full-width",
+        "section_width": "page-width",
         "toggle_overlay": false,
         "overlay_color": "#00000026",
         "overlay_style": "solid",
