@@ -18,7 +18,7 @@
           "type": "_announcement",
           "name": "t:names.announcement",
           "settings": {
-            "text": "<strong>WAREHOUSE CLOSED UNTIL 8/5</strong> - shipping delays expected on orders submitted after 7/30.",
+            "text": "<strong>FREE SHIPPING</strong> - on all orders.",
             "link": "shopify://collections/2026-collection",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
