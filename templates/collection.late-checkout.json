@@ -134,7 +134,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>This summer, Sito Shades invites you to linger a little longer with Late Checkout — a nostalgic nod to retro summers, sunlit mornings, and the effortless confidence of color.</p>",
+            "text": "<p>Sito Shades invites you to linger a little longer with Late Checkout — a nostalgic nod to retro summers, sunlit mornings, and the effortless confidence of color.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
