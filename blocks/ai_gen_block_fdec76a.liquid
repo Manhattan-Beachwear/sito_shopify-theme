@@ -1,0 +1,202 @@
+{% doc %}
+  @prompt
+    ugc video carousel, make videos autoplay
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-ugc-carousel-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    color: #111111;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__heading {
+    margin: 0 0 20px;
+    font-family: var(--font-heading--family, inherit);
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__track {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    padding: 2px 2px 12px;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__card {
+    flex: 0 0 min(74%, 270px);
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    border-radius: {{ block.settings.corner_radius }}px;
+    background: #f2f0e9;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__video,
+  .ai-ugc-carousel-{{ ai_gen_id }}__poster,
+  .ai-ugc-carousel-{{ ai_gen_id }}__placeholder svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__placeholder {
+    height: 100%;
+    color: #77736b;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__caption {
+    margin: 10px 0 0;
+    color: #111111;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__nav {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #111111;
+    border-radius: 50%;
+    color: #111111;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__nav:focus-visible {
+    outline: 3px solid #0057b7;
+    outline-offset: 3px;
+  }
+
+  .ai-ugc-carousel-{{ ai_gen_id }}__nav:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-ugc-carousel-{{ ai_gen_id }}__card {
+      flex-basis: calc((100% - 42px) / 4);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ai-ugc-carousel-{{ ai_gen_id }}__track { scroll-behavior: auto; }
+  }
+{% endstyle %}
+
+<ugc-video-carousel-{{ ai_gen_id }} class="ai-ugc-carousel-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.heading != blank %}
+    <h2 class="ai-ugc-carousel-{{ ai_gen_id }}__heading">{{ block.settings.heading | escape }}</h2>
+  {% endif %}
+  <div class="ai-ugc-carousel-{{ ai_gen_id }}__track" data-track tabindex="0" aria-label="Customer videos">
+    {% for i in (1..4) %}
+      {% liquid
+        assign video_key = 'video_' | append: i
+        assign poster_key = 'poster_' | append: i
+        assign caption_key = 'caption_' | append: i
+        assign video_item = block.settings[video_key]
+        assign poster = block.settings[poster_key]
+        assign caption = block.settings[caption_key]
+      %}
+      <article class="ai-ugc-carousel-{{ ai_gen_id }}__card">
+        <div class="ai-ugc-carousel-{{ ai_gen_id }}__media">
+          {% if video_item != blank %}
+            {% if poster != blank %}
+              {{ poster | image_url: width: 900 | image_tag: class: 'ai-ugc-carousel-' | append: ai_gen_id | append: '__poster', loading: 'lazy', alt: poster.alt }}
+            {% endif %}
+            {{ video_item | video_tag: class: 'ai-ugc-carousel-' | append: ai_gen_id | append: '__video', autoplay: true, loop: true, muted: true, playsinline: true, controls: true, preload: 'metadata' }}
+          {% else %}
+            <div class="ai-ugc-carousel-{{ ai_gen_id }}__placeholder">
+              {{ 'image' | placeholder_svg_tag }}
+              <p>Add a video to show customer content</p>
+            </div>
+          {% endif %}
+        </div>
+        {% if caption != blank %}<p class="ai-ugc-carousel-{{ ai_gen_id }}__caption">{{ caption | escape }}</p>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+  <div class="ai-ugc-carousel-{{ ai_gen_id }}__controls">
+    <button class="ai-ugc-carousel-{{ ai_gen_id }}__nav" type="button" data-prev aria-label="Previous videos"><span aria-hidden="true">&#8592;</span></button>
+    <button class="ai-ugc-carousel-{{ ai_gen_id }}__nav" type="button" data-next aria-label="Next videos"><span aria-hidden="true">&#8594;</span></button>
+  </div>
+</ugc-video-carousel-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    const tagName = 'ugc-video-carousel-{{ ai_gen_id }}';
+    if (customElements.get(tagName)) return;
+    class UgcVideoCarousel extends HTMLElement {
+      connectedCallback() {
+        this.track = this.querySelector('[data-track]');
+        this.previous = this.querySelector('[data-prev]');
+        this.next = this.querySelector('[data-next]');
+        this.previous.addEventListener('click', () => this.move(-1));
+        this.next.addEventListener('click', () => this.move(1));
+        this.track.addEventListener('scroll', () => this.updateButtons(), { passive: true });
+        this.updateButtons();
+      }
+      move(direction) {
+        const card = this.track.querySelector('.ai-ugc-carousel-{{ ai_gen_id }}__card');
+        if (card) this.track.scrollBy({ left: direction * (card.getBoundingClientRect().width + 14), behavior: 'smooth' });
+      }
+      updateButtons() {
+        this.previous.disabled = this.track.scrollLeft <= 1;
+        this.next.disabled = this.track.scrollLeft + this.track.clientWidth >= this.track.scrollWidth - 1;
+      }
+    }
+    customElements.define(tagName, UgcVideoCarousel);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "UGC video carousel",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Real people, real style" },
+    { "type": "range", "id": "desktop_width_percent", "label": "Desktop width", "min": 50, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "range", "id": "corner_radius", "label": "Corner radius", "min": 0, "max": 24, "step": 2, "unit": "px", "default": 4 },
+    { "type": "header", "content": "Video 1" },
+    { "type": "video", "id": "video_1", "label": "Video" },
+    { "type": "image_picker", "id": "poster_1", "label": "Poster image" },
+    { "type": "text", "id": "caption_1", "label": "Caption" },
+    { "type": "header", "content": "Video 2" },
+    { "type": "video", "id": "video_2", "label": "Video" },
+    { "type": "image_picker", "id": "poster_2", "label": "Poster image" },
+    { "type": "text", "id": "caption_2", "label": "Caption" },
+    { "type": "header", "content": "Video 3" },
+    { "type": "video", "id": "video_3", "label": "Video" },
+    { "type": "image_picker", "id": "poster_3", "label": "Poster image" },
+    { "type": "text", "id": "caption_3", "label": "Caption" },
+    { "type": "header", "content": "Video 4" },
+    { "type": "video", "id": "video_4", "label": "Video" },
+    { "type": "image_picker", "id": "poster_4", "label": "Poster image" },
+    { "type": "text", "id": "caption_4", "label": "Caption" }
+  ],
+  "presets": [{ "name": "UGC video carousel" }],
+  "tag": null,
+  "class": "ugc-video-carousel-block"
+}
+{% endschema %}
