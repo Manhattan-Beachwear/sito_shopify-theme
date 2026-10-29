@@ -703,7 +703,7 @@
             "background_media": "image",
             "video_position": "cover",
             "background_image": "shopify://shop_images/SIRYK004P_A_227def98-9f7d-4ff8-bd86-20621cd065f0.jpg",
-            "background_image_position": "fit",
+            "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -882,7 +882,7 @@
         "ai_gen_block_462927f_wEhdrX"
       ],
       "settings": {
-        "content_direction": "column",
+        "content_direction": "row",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
