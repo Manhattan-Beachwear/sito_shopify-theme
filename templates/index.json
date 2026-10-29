@@ -702,7 +702,7 @@
             "color_scheme": "scheme-5",
             "background_media": "image",
             "video_position": "cover",
-            "background_image": "shopify://shop_images/SIRYK004P_A_227def98-9f7d-4ff8-bd86-20621cd065f0.jpg",
+            "background_image": "shopify://shop_images/SIVIN003P_6.jpg",
             "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
@@ -761,7 +761,7 @@
             "color_scheme": "scheme-5",
             "background_media": "image",
             "video_position": "cover",
-            "background_image": "shopify://shop_images/SITVD005S-DE_A.jpg",
+            "background_image": "shopify://shop_images/SIBOB001S_6.jpg",
             "background_image_position": "cover",
             "border": "solid",
             "border_width": 1,
@@ -1112,6 +1112,59 @@
         "product_image_swatch_style": "circle",
         "product_image_swatch_size": 48,
         "show_horizontal_scroll": false
+      }
+    },
+    "1793302839f51982f4": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_190af4b_bCd69w": {
+          "type": "ai_gen_block_190af4b",
+          "settings": {
+            "heading": "Sito on You",
+            "desktop_width_percent": 100,
+            "autoplay": true,
+            "video_1": "shopify://files/videos/v14044g50000d87tt3vog65ii35t28g0 (1).MP4",
+            "caption_1": "",
+            "video_2": "shopify://files/videos/FullSizeRender.mov",
+            "caption_2": "",
+            "video_3": "shopify://files/videos/ttaire ugc (2).mp4",
+            "caption_3": "",
+            "video_4": "shopify://files/videos/copy_EA702F72-F65F-4694-9979-295AB440548E copy 2.mov",
+            "caption_4": "",
+            "caption_5": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_190af4b_bCd69w"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "section_QNAfQY": {
@@ -1780,59 +1833,6 @@
         "padding-block-start": 24,
         "padding-block-end": 100,
         "gap_between_elements": 84
-      }
-    },
-    "1793302839f51982f4": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_190af4b_bCd69w": {
-          "type": "ai_gen_block_190af4b",
-          "settings": {
-            "heading": "Sito on You",
-            "desktop_width_percent": 100,
-            "autoplay": true,
-            "video_1": "shopify://files/videos/v14044g50000d87tt3vog65ii35t28g0 (1).MP4",
-            "caption_1": "",
-            "video_2": "shopify://files/videos/FullSizeRender.mov",
-            "caption_2": "",
-            "video_3": "shopify://files/videos/ttaire ugc (2).mp4",
-            "caption_3": "",
-            "video_4": "shopify://files/videos/copy_EA702F72-F65F-4694-9979-295AB440548E copy 2.mov",
-            "caption_4": "",
-            "caption_5": ""
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_190af4b_bCd69w"
-      ],
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
       }
     }
   },
