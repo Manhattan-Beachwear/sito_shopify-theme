@@ -1,6 +1,185 @@
+{% doc %}
+  @prompt
+    build me a video carousel that has an autoplay option
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-carousel-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    color: #111111;
+    font-family: inherit;
+  }
+  .ai-video-carousel-{{ ai_gen_id }}__heading { margin: 0 0 16px; color: #111111; }
+  .ai-video-carousel-{{ ai_gen_id }}__track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding: 2px 2px 12px;
+    overscroll-behavior-inline: contain;
+  }
+  .ai-video-carousel-{{ ai_gen_id }}__slide {
+    flex: 0 0 min(80%, 360px);
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+  .ai-video-carousel-{{ ai_gen_id }}__media {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    background: #f2f1eb;
+    border-radius: 4px;
+  }
+  .ai-video-carousel-{{ ai_gen_id }}__media video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ai-video-carousel-{{ ai_gen_id }}__placeholder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    background: #f2f1eb;
+  }
+  .ai-video-carousel-{{ ai_gen_id }}__placeholder svg { width: 100%; height: 100%; color: #77736a; }
+  .ai-video-carousel-{{ ai_gen_id }}__empty {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    margin: 0;
+    padding: 8px 10px;
+    background: #ffffff;
+    color: #333333;
+    font-size: 13px;
+    text-align: center;
+  }
+  .ai-video-carousel-{{ ai_gen_id }}__caption { margin: 10px 0 0; color: #111111; font-size: 14px; }
+  .ai-video-carousel-{{ ai_gen_id }}__controls { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+  .ai-video-carousel-{{ ai_gen_id }}__button {
+    width: 42px;
+    height: 42px;
+    display: inline-grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid #111111;
+    border-radius: 50%;
+    background: #fcfbf4;
+    color: #111111;
+    cursor: pointer;
+  }
+  .ai-video-carousel-{{ ai_gen_id }}__button:hover { background: #111111; color: #ffffff; }
+  .ai-video-carousel-{{ ai_gen_id }}__button:focus-visible { outline: 2px solid #0057b7; outline-offset: 3px; }
+  .ai-video-carousel-{{ ai_gen_id }}__button svg { width: 18px; height: 18px; }
+  @media (max-width: 749px) {
+    .ai-video-carousel-{{ ai_gen_id }} { width: 100%; }
+    .ai-video-carousel-{{ ai_gen_id }}__slide { flex-basis: min(78%, 300px); }
+  }
+{% endstyle %}
+
+<video-carousel-{{ ai_gen_id }} class="ai-video-carousel-{{ ai_gen_id }}" data-autoplay="{{ block.settings.autoplay }}" {{ block.shopify_attributes }}>
+  {% if block.settings.heading != blank %}<h2 class="ai-video-carousel-{{ ai_gen_id }}__heading">{{ block.settings.heading | escape }}</h2>{% endif %}
+  <div class="ai-video-carousel-{{ ai_gen_id }}__track" aria-label="Video carousel">
+    {% for i in (1..5) %}
+      {% liquid
+        assign video_key = 'video_' | append: i
+        assign caption_key = 'caption_' | append: i
+        assign video_item = block.settings[video_key]
+        assign caption = block.settings[caption_key]
+      %}
+      {% if video_item != blank or forloop.index == 1 %}
+        <article class="ai-video-carousel-{{ ai_gen_id }}__slide">
+          <div class="ai-video-carousel-{{ ai_gen_id }}__media">
+            {% if video_item != blank %}
+              {{ video_item | video_tag: autoplay: false, loop: true, muted: true, controls: true, playsinline: true, preload: 'metadata' }}
+            {% else %}
+              <div class="ai-video-carousel-{{ ai_gen_id }}__placeholder">
+                {{ 'image' | placeholder_svg_tag }}
+                <p class="ai-video-carousel-{{ ai_gen_id }}__empty">Add a video to begin building your carousel.</p>
+              </div>
+            {% endif %}
+          </div>
+          {% if caption != blank %}<p class="ai-video-carousel-{{ ai_gen_id }}__caption">{{ caption | escape }}</p>{% endif %}
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="ai-video-carousel-{{ ai_gen_id }}__controls" aria-label="Carousel controls">
+    <button class="ai-video-carousel-{{ ai_gen_id }}__button" type="button" data-direction="previous" aria-label="Previous videos">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="ai-video-carousel-{{ ai_gen_id }}__button" type="button" data-direction="next" aria-label="Next videos">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</video-carousel-{{ ai_gen_id }}>
+
+<script>
+  (() => {
+    const tagName = 'video-carousel-{{ ai_gen_id }}';
+    if (customElements.get(tagName)) return;
+    class VideoCarousel extends HTMLElement {
+      connectedCallback() {
+        this.track = this.querySelector('.ai-video-carousel-{{ ai_gen_id }}__track');
+        this.slides = [...this.querySelectorAll('.ai-video-carousel-{{ ai_gen_id }}__slide')];
+        this.querySelector('[data-direction="previous"]').addEventListener('click', () => this.move(-1));
+        this.querySelector('[data-direction="next"]').addEventListener('click', () => this.move(1));
+        if (this.dataset.autoplay === 'true' && this.slides.length > 1) this.startAutoplay();
+        this.addEventListener('mouseenter', () => this.pauseAutoplay());
+        this.addEventListener('mouseleave', () => this.resumeAutoplay());
+        this.addEventListener('focusin', () => this.pauseAutoplay());
+        this.addEventListener('focusout', () => this.resumeAutoplay());
+      }
+      move(direction) {
+        const slide = this.slides[0];
+        if (!slide) return;
+        const gap = parseFloat(getComputedStyle(this.track).columnGap) || 0;
+        this.track.scrollBy({ left: direction * (slide.getBoundingClientRect().width + gap), behavior: 'smooth' });
+      }
+      startAutoplay() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        this.timer = window.setInterval(() => {
+          const atEnd = this.track.scrollLeft + this.track.clientWidth >= this.track.scrollWidth - 2;
+          if (atEnd) this.track.scrollTo({ left: 0, behavior: 'smooth' });
+          else this.move(1);
+        }, 5000);
+      }
+      pauseAutoplay() { if (this.timer) window.clearInterval(this.timer); this.timer = null; }
+      resumeAutoplay() { if (this.dataset.autoplay === 'true' && !this.timer) this.startAutoplay(); }
+      disconnectedCallback() { this.pauseAutoplay(); }
+    }
+    customElements.define(tagName, VideoCarousel);
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Video carousel",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Video highlights" },
+    { "type": "range", "id": "desktop_width_percent", "label": "Desktop width", "min": 50, "max": 100, "step": 5, "unit": "%", "default": 100 },
+    { "type": "checkbox", "id": "autoplay", "label": "Autoplay carousel", "default": false },
+    { "type": "header", "content": "Videos" },
+    { "type": "video", "id": "video_1", "label": "Video 1" },
+    { "type": "text", "id": "caption_1", "label": "Caption 1" },
+    { "type": "video", "id": "video_2", "label": "Video 2" },
+    { "type": "text", "id": "caption_2", "label": "Caption 2" },
+    { "type": "video", "id": "video_3", "label": "Video 3" },
+    { "type": "text", "id": "caption_3", "label": "Caption 3" },
+    { "type": "video", "id": "video_4", "label": "Video 4" },
+    { "type": "text", "id": "caption_4", "label": "Caption 4" },
+    { "type": "video", "id": "video_5", "label": "Video 5" },
+    { "type": "text", "id": "caption_5", "label": "Caption 5" }
+  ],
+  "presets": [{ "name": "Video carousel" }],
+  "tag": null,
+  "class": "video-carousel-block"
+}
 {% endschema %}
