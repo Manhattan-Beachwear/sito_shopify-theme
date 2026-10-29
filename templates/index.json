@@ -685,7 +685,7 @@
           "type": "text",
           "settings": {
             "text": "<p>FREE STANDARD SHIPPING &nbsp; &nbsp; &nbsp;/ &nbsp; &nbsp; &nbsp; $0 MIN SPEND &nbsp; &nbsp; &nbsp; / &nbsp; &nbsp; &nbsp;12 MONTH WARRANTY* &nbsp; &nbsp; &nbsp;/ &nbsp; &nbsp; &nbsp;30 DAY RETURNS &nbsp; &nbsp; &nbsp;/ &nbsp;&nbsp;</p>",
-            "width": "fit-content",
+            "width": "100%",
             "max_width": "normal",
             "alignment": "left",
             "type_preset": "custom",
@@ -694,7 +694,7 @@
             "line_height": "tight",
             "letter_spacing": "tight",
             "case": "none",
-            "wrap": "nowrap",
+            "wrap": "pretty",
             "color": "var(--color-foreground)",
             "background": false,
             "background_color": "#00000026",
