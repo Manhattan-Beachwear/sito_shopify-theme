@@ -107,7 +107,7 @@
             "type_font_primary_link": "subheading",
             "type_case_primary_link": "uppercase",
             "dropdown_alignment": "aligned",
-            "menu_style": "collection_images",
+            "menu_style": "text",
             "featured_products_aspect_ratio": "adapt",
             "featured_collections_aspect_ratio": "16 / 9",
             "image_border_radius": 0,
