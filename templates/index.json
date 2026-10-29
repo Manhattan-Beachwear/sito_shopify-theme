@@ -1782,27 +1782,30 @@
         "gap_between_elements": 84
       }
     },
-    "17933027150d0d1632": {
+    "1793302839f51982f4": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_fdec76a_FWjjMF": {
-          "type": "ai_gen_block_fdec76a",
+        "ai_gen_block_190af4b_bCd69w": {
+          "type": "ai_gen_block_190af4b",
           "settings": {
-            "heading": "Real people, real style",
+            "heading": "Sito on You",
             "desktop_width_percent": 100,
-            "corner_radius": 4,
+            "autoplay": true,
             "video_1": "shopify://files/videos/v14044g50000d87tt3vog65ii35t28g0 (1).MP4",
             "caption_1": "",
             "video_2": "shopify://files/videos/FullSizeRender.mov",
             "caption_2": "",
+            "video_3": "shopify://files/videos/ttaire ugc (2).mp4",
             "caption_3": "",
-            "caption_4": ""
+            "video_4": "shopify://files/videos/copy_EA702F72-F65F-4694-9979-295AB440548E copy 2.mov",
+            "caption_4": "",
+            "caption_5": ""
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_fdec76a_FWjjMF"
+        "ai_gen_block_190af4b_bCd69w"
       ],
       "settings": {
         "content_direction": "column",
@@ -1839,11 +1842,11 @@
     "product_list_3jXVPM",
     "section_P6EKQA",
     "product_list_eCMtLt",
+    "1793302839f51982f4",
     "section_QNAfQY",
     "media_with_content_4RRbep",
     "177014541190c46887",
     "section_t8fqbM",
-    "marquee_7df8gE",
-    "17933027150d0d1632"
+    "marquee_7df8gE"
   ]
 }
