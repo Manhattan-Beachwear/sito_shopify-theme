@@ -268,7 +268,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>EMAIL: </strong>TLCCS@mbwswim.com</p><p><strong>ADDRESS: </strong>10855 Business Center Dr C, Cypress, CA 90630</p><p><strong>PHONE: </strong>760 814 2840</p>",
+            "text": "<p><strong>EMAIL:&nbsp;</strong>TLCCS@mbwswim.com</p><p><strong>ADDRESS: </strong>11261 Warland Dr Cypress, CA 90630</p><p><strong>PHONE: </strong>760 814 2840</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
